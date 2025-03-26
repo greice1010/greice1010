@@ -12,5 +12,4 @@ jobs:
       - name: Verify Output
         run: |
           echo workflow_2 done,
-          echo ${{ workflow_run.CI.output1 }}
-          echo ${{ workflow_run.Workflow1.output1 }}
+          echo ${{ GITHUB_OUTPUT }}
