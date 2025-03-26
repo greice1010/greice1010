@@ -12,4 +12,4 @@ jobs:
       - name: Verify Output
         run: |
           echo workflow_2 done,
-          echo jobs.CI.outputs
+          echo ${{ jobs.CI.outputs }}
