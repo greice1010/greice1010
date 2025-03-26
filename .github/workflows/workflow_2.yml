@@ -1,7 +1,7 @@
 name: Workflow2
 on:
   workflow_run:
-    workflows: ['CI']
+    workflows: ['CI', 'Workflow1']
     types: [completed]
     branches: ['main']
 jobs:
