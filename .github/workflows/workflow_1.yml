@@ -3,10 +3,14 @@ on:
   push:
     branches: [ "main" ]
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
+    # Expose step outputs as job outputs
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
     steps:
-      - uses: actions/checkout@v2
-      - name: Run a one-line script
-      - id: step1
-        run: echo "test1a=test1a" >> "$GITHUB_OUTPUT"
+    - id: step1
+      run: echo "test=hello" >> "$GITHUB_OUTPUT"
+    - id: step2
+      run: echo "test=world" >> "$GITHUB_OUTPUT"
